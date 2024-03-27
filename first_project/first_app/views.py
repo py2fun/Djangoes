@@ -15,11 +15,7 @@ def pytip(request):
     return HttpResponse("Welcome to pytip page!")
 
 def forms(request):
-    inital_dict={
-        "text": "Some initial data",
-        "integer": 123,
-    }
-    form = TestForm( request.POST or None,initial=inital_dict)
+    form = TestForm( request.POST or None)
     data = "None"
     text= "None"
     if form.is_valid():

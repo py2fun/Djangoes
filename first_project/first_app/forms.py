@@ -3,7 +3,7 @@ from django import forms
 class TestForm(forms.Form):
     text = forms.CharField(min_length=7) 
     boolean = forms.BooleanField()
-    integer = forms.IntegerField()
+    integer = forms.IntegerField(initial=10)
     email = forms.EmailField()
 
     def clean_integer(self):
