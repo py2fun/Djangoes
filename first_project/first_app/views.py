@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .forms import TestForm
+from .forms import PostModelForm
 
 # Create your views here.
 
@@ -15,7 +15,7 @@ def pytip(request):
     return HttpResponse("Welcome to pytip page!")
 
 def forms(request):
-    form = TestForm( request.POST or None)
+    form = PostModelForm( request.POST or None)
     data = "None"
     text= "None"
     if form.is_valid():

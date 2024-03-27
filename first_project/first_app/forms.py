@@ -1,5 +1,15 @@
 from django import forms
 
+from .models import Post
+
+class PostModelForm(forms.ModelForm):
+    
+    class Meta:
+        model = Post
+        fields= ["user","title","slug","image","content","draft","publish"]
+        exclude= []
+
+
 class TestForm(forms.Form):
 
     SOME_CHOICES= [
