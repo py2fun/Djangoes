@@ -15,5 +15,10 @@ def pytip(request):
     return HttpResponse("Welcome to pytip page!")
 
 def forms(request):
-    form = TestForm()
-    return render(request,'first_app/forms.html', {'form': form})
+    form = TestForm( request.POST or None)
+    data = "None"
+    text= "None"
+    if form.is_valid():
+        data = form.cleaned_data
+        text= form.cleaned_data.get("text")
+    return render(request,'first_app/forms.html', {'form': form,'data': data, 'text': text})
