@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 
 from .forms import PostModelForm
 
 # Create your views here.
 
 def index(request):
+    user = User.objects.create_user(username="Ulrich",email="ulrich@gmail.com",password="mac12")
+    user.save()
     return render(request,'first_app/index.html')
 
 def home(request):
