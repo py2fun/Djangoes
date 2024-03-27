@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .forms import SearchForm
+from .forms import TestForm
 
 # Create your views here.
 
@@ -15,5 +15,5 @@ def pytip(request):
     return HttpResponse("Welcome to pytip page!")
 
 def forms(request):
-    form = SearchForm()
+    form = TestForm()
     return render(request,'first_app/forms.html', {'form': form})
